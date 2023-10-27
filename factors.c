@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 /**
  * main - f
@@ -9,7 +10,7 @@
 */
 int main(int argc, char *argv[])
 {
-	unsigned long long int n, i, fact1 = 1, fact2 = 1;
+	uint64_t n, i, fact1 = 1, fact2 = 1;
 	char line[1024];
 	FILE *f;
 
@@ -29,7 +30,7 @@ int main(int argc, char *argv[])
 				break;
 			}
 		}
-		printf("%llu=%llu*%llu\n", n, fact2, fact1);
+		printf("%lu=%lu*%lu\n", n, fact2, fact1);
 	}
 	fclose(f);
 	return (0);
