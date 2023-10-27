@@ -12,7 +12,9 @@
 int main(int argc, char *argv[])
 {
 	mpz_t n, i, fact1, fact2;
-	char line[256];
+	size_t cnt;
+	__ssize_t l;
+	char *line = NULL;
 	FILE *f;
 
 	(void)argc;
@@ -20,7 +22,7 @@ int main(int argc, char *argv[])
 	f = fopen(argv[1], "r");
 	if (f == NULL)
 		return (1);
-	while (fgets(line, sizeof(line), f) != NULL)
+	while ((l = getline(&line, &cnt, f)) != -1)
 	{
         mpz_set_str(n, line, 10);
         mpz_set_ui(fact1, 1);
