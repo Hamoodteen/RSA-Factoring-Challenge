@@ -9,7 +9,7 @@
 */
 int main(int argc, char *argv[])
 {
-	size_t n, i, fact1 = 1, fact2 = 2;
+	size_t n, i, fact1 = 1, fact2 = 1;
 	char line[256];
 	FILE *f;
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	while (fgets(line, sizeof(line), f) != NULL)
 	{
 		n = atoi(line);
-		for (i = 1; i <= n; i++)
+		for (i = 2; i <= n / 2; i++)
 		{
 			if (n % i == 0)
 			{
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 				break;
 			}
 		}
-		printf("%s=%zu*%zu\n", line, fact1, fact2);
+		printf("%lu=%lu*%lu\n", n, fact2, fact1);
 	}
 	fclose(f);
 	return (0);
