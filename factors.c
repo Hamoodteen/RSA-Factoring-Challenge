@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
             }
             mpz_clear(rem);
 		}
-		gmp_printf("%Zd=%Zd*%Zd\n", n, fact1, fact2);
+		gmp_printf("%Zd=%Zd*%Zd\n", n, fact2, fact1);
 	}
 	mpz_clears(n, i, fact1, fact2, NULL);
 	fclose(f);
