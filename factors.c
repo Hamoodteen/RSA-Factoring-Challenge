@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	uint64_t n, i, fact1 = 1, fact2 = 1;
-	char line[1024];
+	char line[256];
 	FILE *f;
 
 	(void)argc;
